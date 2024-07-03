@@ -1,0 +1,24 @@
+<>
+            {[false, ].map((expand) => (
+                <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-2 bg-primary">
+                    <Container fluid>
+                        <Navbar.Brand href="#" className="menu-text">
+                            Menu
+                        </Navbar.Brand>
+                        <Navbar.Toggle variant="primary" className="me-2" onClick={handleShow} aria-controls={`offcanvasNavbar-expand-${expand}`} />
+                        <Navbar.Offcanvas
+                            show={show}
+                            onHide={handleClose}
+                            id={`offcanvasNavbar-expand-${expand}`}
+                            aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+                            placement="end"
+                        >
+
+                            <button type="button" onClick={handleClose} className="close-button text-bg-primary p-3">
+                                <FiX /> {/* Ícone 'x' */}
+                            </button>
+                        </Navbar.Offcanvas>
+                    </Container>
+                </Navbar>
+            ))}
+        </>
